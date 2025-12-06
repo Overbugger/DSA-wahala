@@ -2,7 +2,7 @@ package com.endpoint.Sorting;
 
 import java.util.*;
 
-public class QuickSort {
+public class    QuickSort {
 
     private List<Integer> list;
 
