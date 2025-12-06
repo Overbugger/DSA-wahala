@@ -1,12 +1,8 @@
 package com.endpoint.Sorting;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Stream;
 
 public class CountingSort {
-
 
     public static void countingSort(int[] arr) {
         if (arr == null || arr.length <= 1) {
@@ -40,7 +36,7 @@ public class CountingSort {
         int index = 0;
         for (int i = 0; i < count.length; i++) {
             int value = i + min;  // The actual value
-            int occurrences = count[i];  // How many times it appears
+            int occurrences = count[i];  //     How many times it appears
 
             // Write this value 'occurrences' times
             while (occurrences > 0) {
