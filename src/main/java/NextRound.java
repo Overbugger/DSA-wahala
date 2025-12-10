@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class NextRound {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int n = scanner.nextInt();
+        int k = scanner.nextInt();
+
+        int[] scores = new int[n];
+
+        for (int i = 0; i < n; i++) {
+            scores[i] = scanner.nextInt();
+        }
+
+        int kthScore = scores[k - 1];
+        int finalParticipants = 0;
+
+        for (int score : scores) {
+            if (score > 0 && score >= kthScore) {
+                finalParticipants++;
+            }
+        }
+
+        System.out.println(finalParticipants);
+        scanner.close();
+    }
+}
