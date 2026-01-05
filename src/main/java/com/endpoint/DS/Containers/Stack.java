@@ -1,5 +1,6 @@
 package com.endpoint.DS.Containers;
 
+import com.endpoint.DS.LinkedList.Node;
 import com.endpoint.DS.LinkedList.SinglyLinkedList;
 
 public class Stack <T extends Comparable<T>>{
@@ -13,10 +14,23 @@ public class Stack <T extends Comparable<T>>{
         data.insertInFront(value);
     }
 
-    public void pop(T value) {
-        if(data.isEmpty()){
+    public T pop() {
+        if (data.isEmpty()) {
             throw new IllegalStateException("Stack is empty! Cannot pop.");
         }
-        data.delete(value);
+        Node<T> top = data.getHead();
+        data.delete(top.getData());
+        return top.getData();
+    }
+
+    public T peek() {
+        if (data.isEmpty()) {
+            throw new IllegalStateException("Stack is empty! Cannot peek.");
+        }
+        return data.getHead().getData();
+    }
+
+    public boolean isEmpty() {
+        return data.isEmpty();
     }
 }
